@@ -27,7 +27,7 @@ public class MyAuthTest {
         //TODO 验证失败抛出异常
         try {
             new DefaultApiAuthencator().auth(checkUrl);
-        }catch(Exception e){
+        }catch(RuntimeException e){
             System.out.println("验证失败");
             return;
         }
