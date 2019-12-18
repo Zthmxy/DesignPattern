@@ -25,7 +25,12 @@ public class MyAuthTest {
 
         String checkUrl =  "www.baidu.com?userID="+userId+"&timestamp="+currentTime+"&token="+token;
         //TODO 验证失败抛出异常
-        new DefaultApiAuthencator().auth(checkUrl);
+        try {
+            new DefaultApiAuthencator().auth(checkUrl);
+        }catch(Exception e){
+            System.out.println("验证失败");
+            return;
+        }
         System.out.println("验证成功");
 
     }
